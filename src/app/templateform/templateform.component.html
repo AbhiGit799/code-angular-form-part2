@@ -1,0 +1,119 @@
+<h2> Template Form </h2>
+
+<div>
+
+    <form #regdata="ngForm" (ngSubmit)="register(regdata)">
+
+        <div>
+            <!-- <input type="text" placeholder="Enter Your First Name" name="fname" id="" ngModel required>   -->
+            <!-- name="firstname" ngModel required #fname="ngModel"  , Here sequence is important for execting code -->
+            <input type="text" placeholder="Enter Your First Name" name="firstname" ngModel required minlength="5" maxlength="10" #fname="ngModel" >  
+            
+            <!-- <span *ngIf="!fname.valid">
+                First Name is required.
+
+            </span> -->
+
+            <span *ngIf="fname.touched && !fname.valid">
+
+                <span *ngIf="fname.errors.required">
+                    First name is required.
+                </span>
+                    
+                <span *ngIf="fname.value!='' && fname.value.length<5 || fname.value.length>10">
+                    Minimum Character should be 5 and Maximum characters should be 10
+    
+                 </span>
+        
+            </span>
+     
+
+        </div>
+
+        <br>
+
+        <div>
+            <!-- <input type="text" placeholder="Enter Your Last Name" name="lname" id="" ngModel required>                                       -->
+            <input type="text" placeholder="Enter Your Last Name" name="lastname" ngModel  minlength="5" maxlength="10" required #lname="ngModel">
+           
+            <!-- <span *ngIf="!lname.valid">
+               Last Name is required!!
+
+            </span> -->
+
+            <span *ngIf="lname.touched && !lname.valid">
+
+                <span *ngIf="lname.errors.required">
+                    Last name is required.
+                </span>
+                    
+                <span *ngIf="lname.value!='' && lname.value.length<5 || lname.value.length>10">
+                    Minimum Character should be 5 and Maximum characters should be 10
+    
+                 </span>
+        
+            </span>
+
+         
+
+        </div>
+
+        <br>
+
+        <div>
+            <!-- <input type="text" placeholder="Enter Your Email Address" name="email" id="" ngModel required>                                       -->
+            <input type="text" placeholder="Enter Your Email Address" name="email" ngModel required #email="ngModel">  
+           
+            <!-- <span *ngIf="!email.valid">
+                Email is required!!
+
+            </span> -->
+
+            <span *ngIf="email.touched && !email.valid">
+                Email is required!!
+
+            </span>
+
+        </div>
+
+        <br>
+        
+        <div>
+            <!-- To make button enable after filling all details -->
+            <button type="submit" [disabled]="regdata.invalid">Register</button>
+        </div>
+
+
+    </form>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

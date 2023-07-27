@@ -1,0 +1,127 @@
+<h2>Reactive Form</h2>
+
+<h3>Regirstration Form</h3>
+
+<div>
+
+  <form [formGroup]="regForm" (ngSubmit)="register(regForm)">
+
+    <div>
+     Enter First Name &nbsp;
+      <input
+        type="text"
+        placeholder="Enter your first name"
+        formControlName="fname"
+      />
+      
+      <div *ngIf="regForm.controls['fname'].touched && !regForm.controls['fname'].valid">
+       
+        <span *ngIf="regForm.controls['fname'].hasError('required')">
+             First Name is required.
+       </span>
+
+       <span *ngIf="regForm.controls['fname'].hasError('minlength')">
+        First Name should be of minimum 5 characters
+       </span>
+
+       <span *ngIf="regForm.controls['fname'].hasError('maxlength')">
+        First Name should be less than 10 characters
+       </span>
+
+      </div>
+
+
+
+    </div>
+
+    <div>
+     Enter Last Name &nbsp;
+      <input
+        type="text"
+        placeholder="Enter your Last name"
+        formControlName="lname"
+      />
+
+      <div *ngIf="regForm.controls['lname'].touched && !regForm.controls['lname'].valid">
+       
+        <span *ngIf="regForm.controls['lname'].hasError('required')">
+             Last Name is required.
+       </span>
+
+       <span *ngIf="regForm.controls['lname'].hasError('minlength')">
+        Last Name should be of minimum 5 characters
+       </span>
+
+       <span *ngIf="regForm.controls['lname'].hasError('maxlength')">
+        Last Name should be less than 10 characters
+       </span>
+
+      </div>
+
+
+
+    </div>
+
+    <div>
+      Enter Email Address &nbsp;
+      <input
+        type="text"
+        placeholder="Enter your email address"
+        formControlName="email"
+      />
+
+      <div *ngIf="regForm.controls['email'].touched && !regForm.controls['email'].valid">
+       
+        <span *ngIf="regForm.controls['email'].hasError('required')">
+             Email is required.
+       </span>
+
+       <span *ngIf="regForm.controls['email'].hasError('email')">
+        Email should be correct.
+       </span>
+
+      </div>
+      
+    </div>
+
+    <div>
+      Enter Mobile Number &nbsp;
+      <input
+        type="text"
+        placeholder="Enter your Mobile Number"
+        formControlName="mobileno"
+      />
+    </div>
+
+    <br> <br>
+
+    <div>
+        <button type="submit" class="button">Register</button> &nbsp;
+
+        <button type="reset" class="button">Reset Button Type</button> &nbsp;
+
+        <button (click)="resetpartial()" class="button">Partial Reset</button> &nbsp;
+
+        <button (click)="resetpartial()" class="button">Reset All</button> &nbsp;
+
+        <button (click)=" resettit()" class="button">Reset Title</button> &nbsp;
+
+        <button (click)="filldatapatch()" class="button">Fill Data PatchValue</button> &nbsp;
+
+        <button (click)="filldataset()" class="button">Fill Data Setalue</button> &nbsp;
+
+    </div>
+
+  </form>
+
+</div>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+h2{
+    background-color:cadetblue;
+    color: white;
+}
+
+h3
+{
+    background-color:gray;
+    color: white;
+}
+
+
+.button
+{
+    border-radius: 4px;
+    background-color:gray;
+    font-size: 16px;
+    margin: 2px 2px;
+}
